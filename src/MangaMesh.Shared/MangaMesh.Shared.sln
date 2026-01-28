@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36616.10 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MangaMesh.Shared", "MangaMesh.Shared\MangaMesh.Shared.csproj", "{62F787B1-2BD1-455D-9983-7354F47D0FCA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62F787B1-2BD1-455D-9983-7354F47D0FCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62F787B1-2BD1-455D-9983-7354F47D0FCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62F787B1-2BD1-455D-9983-7354F47D0FCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62F787B1-2BD1-455D-9983-7354F47D0FCA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A0B07480-0605-4F66-B5ED-2DDE555A94B8}
+	EndGlobalSection
+EndGlobal
