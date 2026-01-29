@@ -29,6 +29,23 @@ namespace MangaMesh.Shared.Stores
             }
         }
 
+        public static async Task<T> LoadSingleAsync<T>(string path)
+        {
+            await _lock.WaitAsync();
+            try
+            {
+                if (!File.Exists(path))
+                    return default;
+
+                var json = await File.ReadAllTextAsync(path);
+                return JsonSerializer.Deserialize<T>(json);
+            }
+            finally
+            {
+                _lock.Release();
+            }
+        }
+
         public static async Task SaveAsync<T>(string path, List<T> items)
         {
             await _lock.WaitAsync();
@@ -36,6 +53,24 @@ namespace MangaMesh.Shared.Stores
             {
                 var json = JsonSerializer.Serialize(
                     items,
+                    new JsonSerializerOptions { WriteIndented = true }
+                );
+
+                await File.WriteAllTextAsync(path, json);
+            }
+            finally
+            {
+                _lock.Release();
+            }
+        }
+
+        public static async Task SaveAsync<T>(string path, T item)
+        {
+            await _lock.WaitAsync();
+            try
+            {
+                var json = JsonSerializer.Serialize(
+                    item,
                     new JsonSerializerOptions { WriteIndented = true }
                 );
 
